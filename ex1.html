@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>测试</title>
+</head>
+<style type="text/css">
+body{
+	font-family: "宋体";
+	font-size: 14px;
+	color: #666666;
+	background:#f2f2f2 url(images/bg.gif) repeat-x left top;
+	height: 2000px;
+}
+ul,li,html,body{margin: 0px; padding: 0px;}
+ul{list-style-type: none;}
+a:link,a:visited{
+	text-decoration: none;
+	color: #666;
+}
+ 
+#top_bg{
+	position: fixed;
+	width: 100%;
+	height: 40px;
+	background:#333;
+	border-bottom: 1px solid #c6c6c6
+	box-shadow:	2px 5px 7px #999;
+	z-index: 999;
+	left: 0px;
+}
+.top{
+	margin: 0px auto;
+	width: 980px;
+	height: 40px;
+}
+.logo_l{
+	float: left;
+	width: 145px;
+	height: 40px;
+	background:url(images/logo.png) no-repeat left;
+}
+.nav_r{
+	width: auto !important;
+	height: 40px;
+	float: left;
+	position: relative;
+	z-index: 999;
+}
+ 
+#navul li{
+	position: relative;
+	float: left;
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+#navul li a:link,#navul li a:visited{
+	color: #FFF;
+	font-weight: 500;
+	letter-spacing: 2px;
+}
+#navul li ul{
+	/* display: none; */
+	position: absolute;
+	left: -1;
+	z-index: 999;
+	background:#e6e6e6;
+	border: 1px solid #c6c6c6;
+	border-bottom: none;
+}
+#navul li ul li{
+	width: 78px;
+	height: 35px;
+	line-height: 35px;
+	float: none;
+	display: block;
+	font-size: 12px;
+	border-bottom: 1px solid #c6c6c6;
+	overflow: hidden;
+	position: relative;
+}
+ 
+#navul li.navmoon{
+	background: #e6e6e6;
+	border: 1px solid #c6c6c6;
+	width: 78px;
+	height: 38px;
+	line-height: 38px;
+}
+#navul li.navmoon a{color: #404a58;}
+#navul li.navmoon a:hover{color: #fcff00;}
+#navul li.navmoon ul{display: block;}
+#navul li.navmoon ul a{
+	display: block;
+	width: 78px;
+	height: 35px;
+	line-height: 35px;
+}
+#navul li.navmoon ul a:hover{
+	color: #0573bd;
+	background: #fff;
+}
+ 
+</style>
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<body>
+ 
+<div id="top_bg">
+	<div class="top">
+		<div class="logo_l"></div>
+		<div class="nav_r">
+			<ul id="navul">
+				<li class=""><a href="#">视频</a>
+					<ul>
+						<li><a href="#">图片图片</a></li>
+						<li><a href="#">视频视频</a></li>
+						<li><a href="#">图片图片</a></li>		
+					</ul>
+				</li>
+				<li><a href="#">图片</a>
+				</li>
+				<li><a href="#">视频</a></li>
+				<li><a href="#">图片</a></li>
+			</ul>
+		</div>
+ 
+	</div>
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+	$(function(){
+		$("#navul>li").not(".navmoon").hover(function(){
+			$(this).addClass("navmoon");
+		},function(){
+			$(this).removeClass("navmoon");
+		});
+	})
+</script>
+</body>
+</html>
